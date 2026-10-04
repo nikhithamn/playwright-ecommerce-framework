@@ -1,0 +1,46 @@
+{
+  "name": "enterprise-playwright-framework",
+  "version": "1.0.0",
+  "description": "Production-quality, enterprise-grade Playwright automation framework for UI, API, DB, and Hybrid testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --grep @ui",
+    "test:api": "playwright test --grep @api",
+    "test:hybrid": "playwright test --grep @hybrid",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "playwright",
+    "automation-framework",
+    "testing",
+    "e2e",
+    "api-testing",
+    "ui-testing",
+    "hybrid-testing",
+    "typescript"
+  ],
+  "author": "QA Engineering Team",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@playwright/test": "^1.45.0",
+    "@types/node": "^20.14.9",
+    "@types/pg": "^8.11.6",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.57.0",
+    "pg": "^8.12.0",
+    "prettier": "^3.3.2",
+    "typescript": "^5.5.2",
+    "winston": "^3.13.0"
+  }
+}

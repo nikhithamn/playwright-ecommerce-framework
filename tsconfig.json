@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@config/*": ["config/*"],
+      "@src/*": ["src/*"],
+      "@pages/*": ["src/ui/pages/*"],
+      "@components/*": ["src/ui/components/*"],
+      "@api/*": ["src/api/*"],
+      "@db/*": ["src/db/*"],
+      "@fixtures/*": ["src/fixtures/*"],
+      "@factories/*": ["src/factories/*"],
+      "@utils/*": ["src/utils/*"]
+    }
+  },
+  "include": ["src/**/*", "config/**/*", "tests/**/*"]
+}

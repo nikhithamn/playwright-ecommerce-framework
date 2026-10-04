@@ -1,0 +1,17 @@
+# Node dependencies
+node_modules/
+
+# Test artifacts & reports
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+logs/*.log
+
+# Environment & local settings
+.env
+*.env.local
+
+# System files
+.DS_Store
+Thumbs.db

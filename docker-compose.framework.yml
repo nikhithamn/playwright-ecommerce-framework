@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  playwright-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile.framework
+    container_name: playwright-test-runner
+    environment:
+      - BASE_URL=http://host.docker.internal:3000
+      - API_BASE_URL=http://host.docker.internal:5001/api
+      - DB_HOST=host.docker.internal
+      - DB_PORT=5432
+      - DB_NAME=qa_ecommerce
+      - DB_USER=qa_user
+      - DB_PASSWORD=qa_pass
+    volumes:
+      - ./playwright-report:/app/playwright-report
+      - ./test-results:/app/test-results
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
