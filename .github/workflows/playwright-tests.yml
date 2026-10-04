@@ -12,7 +12,22 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout Framework Repository
+      uses: actions/checkout@v4
+
+    - name: Checkout ByteMart App SUT
+      uses: actions/checkout@v4
+      with:
+        repository: nikhithamn/bytemart-app
+        path: sut-app
+
+    - name: Start ByteMart SUT Application Services
+      run: |
+        cd sut-app
+        docker compose up -d --build
+        echo "Waiting for ByteMart backend & DB services to be healthy..."
+        timeout 60s bash -c 'until curl -s http://localhost:5001/api/products > /dev/null; do sleep 2; done' || true
+        echo "ByteMart SUT is ready!"
 
     - uses: actions/setup-node@v4
       with:
